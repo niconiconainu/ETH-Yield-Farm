@@ -55,15 +55,17 @@ contract TokenFarm{
 
     //　3.アンステーキング機能
     // * 投資家は、預け入れた Dai を引き出すことができる
-    function unstakeTokens() public {
+    function unstakeTokens(uint _amount) public {
         // 投資家がステーキングした金額を取得する
         uint balance = stakingBalance[msg.sender];
         // 投資家がステーキングした金額が0以上であることを確認する
-        require(balance > 0, "staking balance cannot be 0");
+        require(balance > _amount, "staking balance should be more than unstaked amount");
         // 偽の Dai トークンを投資家に返金する
-        daiToken.transfer(msg.sender, balance);
+        daiToken.transfer(msg.sender, _amount);
+        // 返金した分のdappTokenを利子として付与する
+        dappToken.transfer(msg.sender, _amount);
         // 投資家のステーキング残高を0に更新する
-        stakingBalance[msg.sender] = 0;
+        stakingBalance[msg.sender] = balance - _amount;
         // 投資家のステーキング状態を更新する
         isStaking[msg.sender] = false;
     }

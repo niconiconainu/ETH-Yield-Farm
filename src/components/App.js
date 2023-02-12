@@ -108,7 +108,7 @@ class App extends Component {
   // TokenFarm.sol に記載されたアンステーキング機能を呼び出す
   unstakeTokens = (amount) => {
     this.setState({ loading: true })
-    this.state.tokenFarm.methods.unstakeTokens().send({ from: this.state.account }).on('transactionHash', (hash) => {
+    this.state.tokenFarm.methods.unstakeTokens(amount).send({ from: this.state.account }).on('transactionHash', (hash) => {
       this.setState({ loading: false })
     })
   }
