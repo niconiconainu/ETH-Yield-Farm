@@ -112,6 +112,7 @@ class App extends Component {
       this.setState({ loading: false })
     })
   }
+  // ↑ --- 2. 追加するコード ---- ↑
 
   // constructor(): ブロックチェーンから読み込んだデータ + ユーザーの状態を更新する関数
   constructor(props) {
