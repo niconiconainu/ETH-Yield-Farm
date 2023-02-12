@@ -91,19 +91,19 @@ contract('TokenFarm', ([owner, investor]) => {
             await tokenFarm.issueTokens({ from: investor }).should.be.rejected
 
             //トークンをアンステーキングする
-            await tokenFarm.unstakeTokens({ from: investor })
+            await tokenFarm.unstakeTokens(tokens("60"), { from: investor })
 
             //テスト11. アンステーキングの結果を確認する
             result = await daiToken.balanceOf(investor)
-            assert.equal(result.toString(), tokens('100'), 'investor Mock DAI wallet balance correct after staking')
+            assert.equal(result.toString(), tokens('60'), 'investor Mock DAI wallet balance correct after staking')
 
             //テスト12.投資家がアンステーキングした後の Token Farm 内に存在する偽の Dai 残高を確認する
             result = await daiToken.balanceOf(tokenFarm.address)
-            assert.equal(result.toString(), tokens('0'), 'Token Farm Mock DAI balance correct after staking')
+            assert.equal(result.toString(), tokens('40'), 'Token Farm Mock DAI balance correct after staking')
 
             //テスト13. 投資家がアンステーキングした後の投資家の残高を確認する
             result = await tokenFarm.stakingBalance(investor)
-            assert.equal(result.toString(), tokens('0'), 'investor staking status correct after staking')
+            assert.equal(result.toString(), tokens('40'), 'investor staking status correct after staking')
 
             //テスト14. 投資家がアンステーキングした後の投資家の状態を確認する
             result = await tokenFarm.isStaking(investor)

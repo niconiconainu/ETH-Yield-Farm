@@ -40,6 +40,7 @@ class Main extends Component {
                                     className="form-control form-control-lg"
                                     placeholder='0'
                                     required
+                                    id='value'
                                 />
                                 <div className='input-group-append'>
                                     <img src={dai} height='32' alt="" />
@@ -53,7 +54,7 @@ class Main extends Component {
                             className='btn btn-link btn-block btn-sm'
                             onClick={(event) => {
                                 event.preventDefault()
-                                this.props.unstakeTokens()
+                                this.props.unstakeTokens(window.web3.utils.toWei(document.getElementById('value').value.toString(), 'Ether'))
                             }}
                         >
                             UN-STAKE...
