@@ -32,7 +32,7 @@ jobs:
       - name: lint
         run: yarn lint
       - name: solhint
-        run: yarn workspace contract solhint
+        run: yarn solhint
       - name: format
         run: yarn prettier:check
 
@@ -46,4 +46,4 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: integration_test
-        run: yarn workspace contract test
+        run: yarn test:contract
