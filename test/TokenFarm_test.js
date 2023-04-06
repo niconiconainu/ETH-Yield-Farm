@@ -9,7 +9,7 @@ const TokenFarm = artifacts.require(`TokenFarm`);
 
 require(`chai`).use(require('chai-as-promised')).should();
 const web3 = require('web3');
-const assert = require('chai');
+const { assert } = require('chai');
 
 function tokens(n) {
   return web3.utils.toWei(n, 'ether');

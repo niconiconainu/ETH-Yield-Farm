@@ -48,7 +48,7 @@
     "prettier:check": "prettier --ignore-unknown --no-error-on-unmatched-pattern --ignore-path .prettierignore --check .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "test:contract": "truffle test",
+    "test:contract": "bash test.sh",
     "solhint": "solhint --max-error 0 -c ./.solhint.json \"./src/contracts/*.sol\"",
     "solhint:fix": "solhint --fix --max-error 0 -c ./.solhint.json \"./src/contracts/*.sol\""
   },
