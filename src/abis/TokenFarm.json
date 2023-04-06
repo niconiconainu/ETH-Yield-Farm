@@ -212,21 +212,14 @@
   "ast": {
     "absolutePath": "project:/src/contracts/TokenFarm.sol",
     "exportedSymbols": {
-      "TokenFarm": [
-        576
-      ]
+      "TokenFarm": [576]
     },
     "id": 577,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 363,
-        "literals": [
-          "solidity",
-          "^",
-          "0.5",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.5", ".0"],
         "nodeType": "PragmaDirective",
         "src": "0:23:2"
       },
@@ -259,9 +252,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 576,
-        "linearizedBaseContracts": [
-          576
-        ],
+        "linearizedBaseContracts": [576],
         "name": "TokenFarm",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -900,10 +891,7 @@
                       "id": 415,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        594,
-                        595
-                      ],
+                      "overloadedDeclarations": [594, 595],
                       "referencedDeclaration": 595,
                       "src": "668:7:2",
                       "typeDescriptions": {
@@ -1768,10 +1756,7 @@
                       "id": 477,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        594,
-                        595
-                      ],
+                      "overloadedDeclarations": [594, 595],
                       "referencedDeclaration": 595,
                       "src": "1243:7:2",
                       "typeDescriptions": {
@@ -1804,9 +1789,7 @@
                     "src": "1458:279:2",
                     "statements": [
                       {
-                        "assignments": [
-                          497
-                        ],
+                        "assignments": [497],
                         "declarations": [
                           {
                             "constant": false,
@@ -1881,9 +1864,7 @@
                         "src": "1543:30:2"
                       },
                       {
-                        "assignments": [
-                          503
-                        ],
+                        "assignments": [503],
                         "declarations": [
                           {
                             "constant": false,
@@ -2171,9 +2152,7 @@
                   },
                   "id": 521,
                   "initializationExpression": {
-                    "assignments": [
-                      486
-                    ],
+                    "assignments": [486],
                     "declarations": [
                       {
                         "constant": false,
@@ -2295,9 +2274,7 @@
               "src": "1913:765:2",
               "statements": [
                 {
-                  "assignments": [
-                    529
-                  ],
+                  "assignments": [529],
                   "declarations": [
                     {
                       "constant": false,
@@ -2468,10 +2445,7 @@
                       "id": 535,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        594,
-                        595
-                      ],
+                      "overloadedDeclarations": [594, 595],
                       "referencedDeclaration": 595,
                       "src": "2137:7:2",
                       "typeDescriptions": {
@@ -2983,20 +2957,13 @@
     "attributes": {
       "absolutePath": "project:/src/contracts/TokenFarm.sol",
       "exportedSymbols": {
-        "TokenFarm": [
-          576
-        ]
+        "TokenFarm": [576]
       }
     },
     "children": [
       {
         "attributes": {
-          "literals": [
-            "solidity",
-            "^",
-            "0.5",
-            ".0"
-          ]
+          "literals": ["solidity", "^", "0.5", ".0"]
         },
         "id": 363,
         "name": "PragmaDirective",
@@ -3008,9 +2975,7 @@
           "absolutePath": "project:/src/contracts/DappToken.sol",
           "file": "./DappToken.sol",
           "scope": 577,
-          "symbolAliases": [
-            null
-          ],
+          "symbolAliases": [null],
           "unitAlias": ""
         },
         "id": 364,
@@ -3023,9 +2988,7 @@
           "absolutePath": "project:/src/contracts/MockDaiToken.sol",
           "file": "./MockDaiToken.sol",
           "scope": 577,
-          "symbolAliases": [
-            null
-          ],
+          "symbolAliases": [null],
           "unitAlias": ""
         },
         "id": 365,
@@ -3034,18 +2997,12 @@
       },
       {
         "attributes": {
-          "baseContracts": [
-            null
-          ],
-          "contractDependencies": [
-            null
-          ],
+          "baseContracts": [null],
+          "contractDependencies": [null],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
-          "linearizedBaseContracts": [
-            576
-          ],
+          "linearizedBaseContracts": [576],
           "name": "TokenFarm",
           "scope": 577
         },
@@ -3354,9 +3311,7 @@
               "implemented": true,
               "isConstructor": true,
               "kind": "constructor",
-              "modifiers": [
-                null
-              ],
+              "modifiers": [null],
               "name": "",
               "scope": 576,
               "stateMutability": "nonpayable",
@@ -3429,9 +3384,7 @@
               },
               {
                 "attributes": {
-                  "parameters": [
-                    null
-                  ]
+                  "parameters": [null]
                 },
                 "children": [],
                 "id": 395,
@@ -3456,9 +3409,7 @@
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 372,
                               "type": "contract DappToken",
                               "value": "dappToken"
@@ -3470,9 +3421,7 @@
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 391,
                               "type": "contract DappToken",
                               "value": "_dappToken"
@@ -3507,9 +3456,7 @@
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 374,
                               "type": "contract DaiToken",
                               "value": "daiToken"
@@ -3521,9 +3468,7 @@
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 393,
                               "type": "contract DaiToken",
                               "value": "_daiToken"
@@ -3558,9 +3503,7 @@
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 370,
                               "type": "address",
                               "value": "owner"
@@ -3584,9 +3527,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 591,
                                   "type": "msg",
                                   "value": "msg"
@@ -3626,9 +3567,7 @@
               "implemented": true,
               "isConstructor": false,
               "kind": "function",
-              "modifiers": [
-                null
-              ],
+              "modifiers": [null],
               "name": "stakeTokens",
               "scope": 576,
               "stateMutability": "nonpayable",
@@ -3671,9 +3610,7 @@
               },
               {
                 "attributes": {
-                  "parameters": [
-                    null
-                  ]
+                  "parameters": [null]
                 },
                 "children": [],
                 "id": 414,
@@ -3692,9 +3629,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "type": "tuple()",
                           "type_conversion": false
                         },
@@ -3711,10 +3646,7 @@
                                   "typeString": "literal_string \"amount can't be 0\""
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                594,
-                                595
-                              ],
+                              "overloadedDeclarations": [594, 595],
                               "referencedDeclaration": 595,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
@@ -3741,9 +3673,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 412,
                                   "type": "uint256",
                                   "value": "_amount"
@@ -3811,9 +3741,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "type": "bool",
                           "type_conversion": false
                         },
@@ -3846,9 +3774,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 374,
                                   "type": "contract DaiToken",
                                   "value": "daiToken"
@@ -3877,9 +3803,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 591,
                                   "type": "msg",
                                   "value": "msg"
@@ -3901,9 +3825,7 @@
                               "isPure": false,
                               "isStructConstructorCall": false,
                               "lValueRequested": false,
-                              "names": [
-                                null
-                              ],
+                              "names": [null],
                               "type": "address",
                               "type_conversion": true
                             },
@@ -3930,9 +3852,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 609,
                                   "type": "contract TokenFarm",
                                   "value": "this"
@@ -3949,9 +3869,7 @@
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 412,
                               "type": "uint256",
                               "value": "_amount"
@@ -3996,9 +3914,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 381,
                                   "type": "mapping(address => uint256)",
                                   "value": "stakingBalance"
@@ -4022,9 +3938,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 591,
                                       "type": "msg",
                                       "value": "msg"
@@ -4071,9 +3985,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 381,
                                       "type": "mapping(address => uint256)",
                                       "value": "stakingBalance"
@@ -4097,9 +4009,7 @@
                                       {
                                         "attributes": {
                                           "argumentTypes": null,
-                                          "overloadedDeclarations": [
-                                            null
-                                          ],
+                                          "overloadedDeclarations": [null],
                                           "referencedDeclaration": 591,
                                           "type": "msg",
                                           "value": "msg"
@@ -4121,9 +4031,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 412,
                                   "type": "uint256",
                                   "value": "_amount"
@@ -4177,9 +4085,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 385,
                                   "type": "mapping(address => bool)",
                                   "value": "hasStaked"
@@ -4203,9 +4109,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 591,
                                       "type": "msg",
                                       "value": "msg"
@@ -4241,9 +4145,7 @@
                                   "isPure": false,
                                   "isStructConstructorCall": false,
                                   "lValueRequested": false,
-                                  "names": [
-                                    null
-                                  ],
+                                  "names": [null],
                                   "type": "uint256",
                                   "type_conversion": false
                                 },
@@ -4268,9 +4170,7 @@
                                       {
                                         "attributes": {
                                           "argumentTypes": null,
-                                          "overloadedDeclarations": [
-                                            null
-                                          ],
+                                          "overloadedDeclarations": [null],
                                           "referencedDeclaration": 377,
                                           "type": "address[] storage ref",
                                           "value": "stakers"
@@ -4299,9 +4199,7 @@
                                       {
                                         "attributes": {
                                           "argumentTypes": null,
-                                          "overloadedDeclarations": [
-                                            null
-                                          ],
+                                          "overloadedDeclarations": [null],
                                           "referencedDeclaration": 591,
                                           "type": "msg",
                                           "value": "msg"
@@ -4361,9 +4259,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 389,
                                   "type": "mapping(address => bool)",
                                   "value": "isStaking"
@@ -4387,9 +4283,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 591,
                                       "type": "msg",
                                       "value": "msg"
@@ -4461,9 +4355,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 385,
                                   "type": "mapping(address => bool)",
                                   "value": "hasStaked"
@@ -4487,9 +4379,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 591,
                                       "type": "msg",
                                       "value": "msg"
@@ -4551,9 +4441,7 @@
               "implemented": true,
               "isConstructor": false,
               "kind": "function",
-              "modifiers": [
-                null
-              ],
+              "modifiers": [null],
               "name": "issueTokens",
               "scope": 576,
               "stateMutability": "nonpayable",
@@ -4563,9 +4451,7 @@
             "children": [
               {
                 "attributes": {
-                  "parameters": [
-                    null
-                  ]
+                  "parameters": [null]
                 },
                 "children": [],
                 "id": 475,
@@ -4574,9 +4460,7 @@
               },
               {
                 "attributes": {
-                  "parameters": [
-                    null
-                  ]
+                  "parameters": [null]
                 },
                 "children": [],
                 "id": 476,
@@ -4595,9 +4479,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "type": "tuple()",
                           "type_conversion": false
                         },
@@ -4614,10 +4496,7 @@
                                   "typeString": "literal_string \"caller must be the owner\""
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                594,
-                                595
-                              ],
+                              "overloadedDeclarations": [594, 595],
                               "referencedDeclaration": 595,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
@@ -4656,9 +4535,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 591,
                                       "type": "msg",
                                       "value": "msg"
@@ -4675,9 +4552,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 370,
                                   "type": "address",
                                   "value": "owner"
@@ -4722,9 +4597,7 @@
                     "children": [
                       {
                         "attributes": {
-                          "assignments": [
-                            486
-                          ]
+                          "assignments": [486]
                         },
                         "children": [
                           {
@@ -4793,9 +4666,7 @@
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 486,
                               "type": "uint256",
                               "value": "i"
@@ -4819,9 +4690,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 377,
                                   "type": "address[] storage ref",
                                   "value": "stakers"
@@ -4857,9 +4726,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 486,
                                   "type": "uint256",
                                   "value": "i"
@@ -4882,9 +4749,7 @@
                         "children": [
                           {
                             "attributes": {
-                              "assignments": [
-                                497
-                              ]
+                              "assignments": [497]
                             },
                             "children": [
                               {
@@ -4927,9 +4792,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 377,
                                       "type": "address[] storage ref",
                                       "value": "stakers"
@@ -4941,9 +4804,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 486,
                                       "type": "uint256",
                                       "value": "i"
@@ -4964,9 +4825,7 @@
                           },
                           {
                             "attributes": {
-                              "assignments": [
-                                503
-                              ]
+                              "assignments": [503]
                             },
                             "children": [
                               {
@@ -5008,9 +4867,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 381,
                                       "type": "mapping(address => uint256)",
                                       "value": "stakingBalance"
@@ -5022,9 +4879,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 497,
                                       "type": "address",
                                       "value": "recipient"
@@ -5066,9 +4921,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 503,
                                       "type": "uint256",
                                       "value": "balance"
@@ -5111,9 +4964,7 @@
                                           "isPure": false,
                                           "isStructConstructorCall": false,
                                           "lValueRequested": false,
-                                          "names": [
-                                            null
-                                          ],
+                                          "names": [null],
                                           "type": "bool",
                                           "type_conversion": false
                                         },
@@ -5161,9 +5012,7 @@
                                           {
                                             "attributes": {
                                               "argumentTypes": null,
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 497,
                                               "type": "address",
                                               "value": "recipient"
@@ -5175,9 +5024,7 @@
                                           {
                                             "attributes": {
                                               "argumentTypes": null,
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 503,
                                               "type": "uint256",
                                               "value": "balance"
@@ -5232,9 +5079,7 @@
               "implemented": true,
               "isConstructor": false,
               "kind": "function",
-              "modifiers": [
-                null
-              ],
+              "modifiers": [null],
               "name": "unstakeTokens",
               "scope": 576,
               "stateMutability": "nonpayable",
@@ -5277,9 +5122,7 @@
               },
               {
                 "attributes": {
-                  "parameters": [
-                    null
-                  ]
+                  "parameters": [null]
                 },
                 "children": [],
                 "id": 527,
@@ -5290,9 +5133,7 @@
                 "children": [
                   {
                     "attributes": {
-                      "assignments": [
-                        529
-                      ]
+                      "assignments": [529]
                     },
                     "children": [
                       {
@@ -5334,9 +5175,7 @@
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 381,
                               "type": "mapping(address => uint256)",
                               "value": "stakingBalance"
@@ -5360,9 +5199,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 591,
                                   "type": "msg",
                                   "value": "msg"
@@ -5396,9 +5233,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "type": "tuple()",
                           "type_conversion": false
                         },
@@ -5415,10 +5250,7 @@
                                   "typeString": "literal_string \"staking balance should be more than unstaked amount\""
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                594,
-                                595
-                              ],
+                              "overloadedDeclarations": [594, 595],
                               "referencedDeclaration": 595,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
@@ -5445,9 +5277,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 529,
                                   "type": "uint256",
                                   "value": "balance"
@@ -5459,9 +5289,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 525,
                                   "type": "uint256",
                                   "value": "_amount"
@@ -5512,9 +5340,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "type": "bool",
                           "type_conversion": false
                         },
@@ -5543,9 +5369,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 374,
                                   "type": "contract DaiToken",
                                   "value": "daiToken"
@@ -5574,9 +5398,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 591,
                                   "type": "msg",
                                   "value": "msg"
@@ -5593,9 +5415,7 @@
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 525,
                               "type": "uint256",
                               "value": "_amount"
@@ -5624,9 +5444,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "type": "bool",
                           "type_conversion": false
                         },
@@ -5655,9 +5473,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 372,
                                   "type": "contract DappToken",
                                   "value": "dappToken"
@@ -5686,9 +5502,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 591,
                                   "type": "msg",
                                   "value": "msg"
@@ -5705,9 +5519,7 @@
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 525,
                               "type": "uint256",
                               "value": "_amount"
@@ -5752,9 +5564,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 381,
                                   "type": "mapping(address => uint256)",
                                   "value": "stakingBalance"
@@ -5778,9 +5588,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 591,
                                       "type": "msg",
                                       "value": "msg"
@@ -5817,9 +5625,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 529,
                                   "type": "uint256",
                                   "value": "balance"
@@ -5831,9 +5637,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 525,
                                   "type": "uint256",
                                   "value": "_amount"
@@ -5883,9 +5687,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 389,
                                   "type": "mapping(address => bool)",
                                   "value": "isStaking"
@@ -5909,9 +5711,7 @@
                                   {
                                     "attributes": {
                                       "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 591,
                                       "type": "msg",
                                       "value": "msg"

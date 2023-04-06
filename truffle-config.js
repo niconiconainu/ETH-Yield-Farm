@@ -4,9 +4,9 @@ require('babel-polyfill');
 module.exports = {
   networks: {
     development: {
-      host: "127.0.0.1",
+      host: '127.0.0.1',
       port: 7545,
-      network_id: "*" // Match any network id
+      network_id: '*', // Match any network id
     },
   },
   contracts_directory: './src/contracts/',
@@ -15,9 +15,9 @@ module.exports = {
     solc: {
       optimizer: {
         enabled: true,
-        runs: 200
+        runs: 200,
       },
-      evmVersion: "petersburg"
-    }
-  }
-}
+      evmVersion: 'petersburg',
+    },
+  },
+};
