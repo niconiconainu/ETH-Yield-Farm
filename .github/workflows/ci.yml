@@ -50,7 +50,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: run node
         run: |
-          yarn truffle develop
+          truffle develop
           while netstat -lnt | awk '$4 ~ /:9545/ {exit 1}'; do sleep 5;
       - name: test
-        run: yarn test:contract
+        run: truffle test
