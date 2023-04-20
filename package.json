@@ -12,7 +12,7 @@
     "lint:fix": "eslint --fix .",
     "prettier": "prettier --ignore-unknown --no-error-on-unmatched-pattern --ignore-path .prettierignore --write .",
     "prettier:check": "prettier --ignore-unknown --no-error-on-unmatched-pattern --ignore-path .prettierignore --check .",
-    "test:contract": "bash test.sh",
+    "test:contract": "truffle test ./test/TokenFarm_test.js",
     "solhint": "solhint --max-error 0 -c ./.solhint.json \"./src/contracts/*.sol\"",
     "solhint:fix": "solhint --fix --max-error 0 -c ./.solhint.json \"./src/contracts/*.sol\""
   },

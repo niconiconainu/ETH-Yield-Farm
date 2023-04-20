@@ -45,5 +45,7 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-      - name: integration_test
-        run: yarn truffle develop && yarn truffle test ./test/TokenFarm_test.js
+      - name: run node
+        run: yarn truffle develop
+      - name: test
+        run: yarn test:contract
