@@ -49,21 +49,20 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: run node
-        run: |
-          truffle develop
+        run: truffle develop
 
   contract-test:
     runs-on: ubuntu-latest
     needs: [setup, check]
     steps:
       - uses: actions/checkout@v3
-      - name: Install Truffle
-        run: npm install truffle -g
       - uses: actions/cache@v3
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: check for port
-        run: while netstat -lnt | awk '$4 ~ /:9545/ {exit 1}';
+        run: while netstat -lnt | awk '$4 ~ /:9545/ {exit 1}'
       - name: test
         run: truffle test
+      - name: kill node
+        run: kill $(lsof -t -i:9545)
