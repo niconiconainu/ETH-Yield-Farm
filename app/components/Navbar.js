@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import farmer from '../farmer.png';
+import farmer from '../public/farmer.png';
 
 class Navbar extends Component {
   render() {
