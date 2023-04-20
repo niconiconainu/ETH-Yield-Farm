@@ -61,7 +61,8 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: check for port
-        run: while netstat -lnt | awk '$4 ~ /:9545/ {exit 1}'
+        run: |
+          while netstat -lnt | awk '$4 ~ /:9545/ {exit 1}';
       - name: test
         run: truffle test
       - name: kill node
