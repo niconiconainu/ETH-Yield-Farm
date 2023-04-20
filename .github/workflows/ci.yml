@@ -38,7 +38,7 @@ jobs:
 
   setup-node:
     runs-on: ubuntu-latest
-    needs: [setup, check]
+    needs: setup
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
@@ -62,7 +62,9 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: check for port
         run: |
-          while netstat -lnt | awk '$4 ~ /:9545/ {exit 1}';
+          while netstat -lnt; do
+          awk '$4 ~ /:9545/ {exit 1}'
+          done
       - name: test
         run: truffle test
       - name: kill node
