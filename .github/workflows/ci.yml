@@ -48,5 +48,7 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      - name: run node
+        run: yarn truffle develop
       - name: test
         run: yarn test:contract
