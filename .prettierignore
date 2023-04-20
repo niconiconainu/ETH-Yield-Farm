@@ -10,3 +10,7 @@ coverage*
 
 gasReporterOutput.json
 package.json
+
+app/abis
+**/*.t.ts
+**/*config.js
