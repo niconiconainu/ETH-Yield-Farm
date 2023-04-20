@@ -64,6 +64,7 @@ jobs:
         run: |
           while netstat -lnt; do
           awk '$4 ~ /:9545/ {exit 1}'
+          sleep 5
           done
       - name: test
         run: truffle test
