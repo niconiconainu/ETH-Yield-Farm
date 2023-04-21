@@ -42,21 +42,21 @@ jobs:
     timeout-minutes: 2
     steps:
       - uses: actions/checkout@v3
-      - name: Install packages
+      - name: Install truffle
         run: npm install truffle -g
       - uses: actions/cache@v3
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-      - name: run node
+      - name: Run truffle node
         run: truffle develop &
-      - name: check for port
-        run: |
-          while netstat -lnt; do
-          awk '$4 ~ /:9545/ {exit 1}'
-          sleep 5
-          done
-      - name: test
+      # - name: Check for port
+      #   run: |
+      #     while netstat -lnt; do
+      #     awk '$4 ~ /:9545/ {exit 1}'
+      #     sleep 5
+      #     done
+      - name: Test
         run: truffle test
-      - name: kill node
+      - name: Kill node
         run: kill $(lsof -t -i:9545)
