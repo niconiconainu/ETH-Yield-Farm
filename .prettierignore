@@ -13,4 +13,3 @@ package.json
 
 app/abis
 **/*.t.ts
-**/*config.js

@@ -1,5 +1,5 @@
 {
-  "name": "defi-tutorial",
+  "name": "ETH-Yield-Farm",
   "version": "0.1.0",
   "description": "DeFi Token Staking App",
   "author": "SHØ <neila@users.noreply.github.com>",
@@ -43,8 +43,8 @@
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
-    "eslint": "8.38.0",
-    "eslint-config-next": "13.3.0",
+    "eslint": "^8.38.0",
+    "eslint-config-next": "^13.3.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
