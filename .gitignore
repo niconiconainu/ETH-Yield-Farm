@@ -22,3 +22,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+yield-farm-test.txt
+
+.next
+
+.vscode
