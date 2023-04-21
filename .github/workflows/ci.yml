@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 16.x
           cache: 'npm'
       - uses: actions/cache@v3
         id: npm-cache
@@ -18,7 +18,9 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
       - name: Install packages
         if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm install
+        run: |
+          npm install truffle -g
+          npm install
 
   check:
     runs-on: ubuntu-latest
@@ -42,8 +44,6 @@ jobs:
     timeout-minutes: 2
     steps:
       - uses: actions/checkout@v3
-      - name: Install Truffle
-        run: npm install truffle -g
       - uses: actions/cache@v3
         with:
           path: '**/node_modules'
