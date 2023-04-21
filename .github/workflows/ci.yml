@@ -10,15 +10,15 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: 'npm'
+          cache: 'yarn'
       - uses: actions/cache@v3
-        id: npm-cache
+        id: yarn-cache
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install packages
-        if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm install
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install --immutable
 
   check:
     runs-on: ubuntu-latest
@@ -28,13 +28,13 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: lint
-        run: npm run lint
+        run: yarn lint
       - name: solhint
-        run: npm run solhint
+        run: yarn solhint
       - name: format
-        run: npm run prettier:check
+        run: yarn prettier:check
 
   contract-test:
     runs-on: ubuntu-latest
@@ -43,19 +43,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install truffle
-        run: npm install truffle -g
+        run: yarn global add truffle
       - uses: actions/cache@v3
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: Run truffle node
         run: truffle develop &
-      # - name: Check for port
-      #   run: |
-      #     while netstat -lnt; do
-      #     awk '$4 ~ /:9545/ {exit 1}'
-      #     sleep 5
-      #     done
       - name: Test
         run: truffle test
       - name: Kill node
