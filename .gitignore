@@ -26,3 +26,5 @@ yarn-error.log*
 yield-farm-test.txt
 
 .next
+
+.vscode
