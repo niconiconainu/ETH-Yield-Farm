@@ -1,12 +1,25 @@
 {
-  "name": "defi-tutorial",
+  "name": "eth-yield-farm",
   "version": "0.1.0",
   "description": "DeFi Token Staking App",
-  "author": "gregory@dappuniversity.com",
+  "author": "SHØ <neila@users.noreply.github.com>",
+  "scripts": {
+    "v": "node -v",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prettier": "prettier --ignore-unknown --no-error-on-unmatched-pattern --ignore-path .prettierignore --write .",
+    "prettier:check": "prettier --ignore-unknown --no-error-on-unmatched-pattern --ignore-path .prettierignore --check .",
+    "test:contract": "truffle test ./test/TokenFarm_test.js",
+    "solhint": "solhint --max-error 0 -c ./.solhint.json \"./src/contracts/*.sol\"",
+    "solhint:fix": "solhint --fix --max-error 0 -c ./.solhint.json \"./src/contracts/*.sol\""
+  },
   "dependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.35",
+    "@types/react-dom": "18.0.11",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-es2015": "6.24.1",
@@ -17,7 +30,21 @@
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
     "chai-bignumber": "3.0.0",
-    "eslint": "^8.33.0",
+    "identicon.js": "^2.3.3",
+    "next": "13.3.0",
+    "node": "18.4.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "truffle": "5.1.39",
+    "typescript": "5.0.4",
+    "web3": "1.2.11"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "eslint": "^8.38.0",
+    "eslint-config-next": "^13.3.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
@@ -25,49 +52,17 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
-    "identicon.js": "^2.3.3",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.3",
     "prettier-plugin-solidity": "^1.1.2",
-    "react": "16.8.4",
-    "react-bootstrap": "1.0.0-beta.5",
-    "react-dom": "16.8.4",
-    "react-scripts": "2.1.3",
     "simple-git-hooks": "^2.8.1",
-    "truffle": "5.1.39",
-    "web3": "1.2.11",
     "solhint": "3.3.7",
     "solidity-coverage": "^0.8.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test:client": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prettier": "prettier --ignore-unknown --no-error-on-unmatched-pattern --ignore-path .prettierignore --write .",
-    "prettier:check": "prettier --ignore-unknown --no-error-on-unmatched-pattern --ignore-path .prettierignore --check .",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "test:contract": "bash test.sh",
-    "solhint": "solhint --max-error 0 -c ./.solhint.json \"./src/contracts/*.sol\"",
-    "solhint:fix": "solhint --fix --max-error 0 -c ./.solhint.json \"./src/contracts/*.sol\""
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
   },
-  "devDependencies": {
-    "typescript": "^5.0.3"
-  },
   "engines": {
-    "node": ">=10.0.0"
-}
+    "node": ">=18.0.0 <19.0.0"
+  }
 }
