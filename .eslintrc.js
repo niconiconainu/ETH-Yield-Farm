@@ -18,7 +18,7 @@ module.exports = {
     'node/no-unsupported-features/node-builtins': ['warn'],
     'node/no-unpublished-require': [
       'warn',
-      { allowModules: ['tailwind-scrollbar'] },
+      { allowModules: ['tailwind-scrollbar', 'dotenv'] },
     ],
     'node/no-unpublished-import': ['warn'],
     'node/no-missing-import': ['warn'],
