@@ -107,29 +107,58 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div className="text-red-500">make</div>
-        <p className="text-3xl">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        {!currentAccount && (
-          <button className="waveButton" onClick={connectWallet}>
+    <div className="h-screen w-screen flex-col flex">
+      <div className="text-ellipsis h-20 w-full flex items-center justify-between bg-black">
+        <div className="flex items-center">
+          <img src={'farmer.png'} alt="Logo" className="px-5" />;
+          <div className="text-white text-3xl">ETH Yield Farm</div>
+        </div>
+        {currentAccount === '' ? (
+          <button
+            className="text-white mr-10 px-3 py-1 text-2xl border-solid border-2 border-white flex items-center justify-center"
+            onClick={connectWallet}
+          >
             Connect Wallet
           </button>
+        ) : (
+          <div className="text-gray-400 text-lg pr-5">{currentAccount}</div>
         )}
-        <div>`daiToken balance: ${currentDaiBalance}`</div>
-        <div>`dappToken balance: ${currentDappBalance}`</div>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
+      <div className=" w-screen h-full flex-1 items-center justify-center flex flex-col">
+        <div className="w-1/2 h-1/3 flex justify-center items-center pt-36">
+          <div className="w-1/2 h-1/2 flex justify-center items-center flex-col">
+            <div>Staking Balance</div>
+            <div>{currentDaiBalance} DAI</div>
+          </div>
+          <div className="w-1/2 h-1/2 flex justify-center items-center flex-col">
+            <div>Reward Balance</div>
+            <div>{currentDappBalance} DAPP</div>
+          </div>
+        </div>
+        <div className="h-1/3 w-1/2 flex justify-start items-center flex-col">
+          <div className="flex-row flex justify-between items-end w-full px-20">
+            <div className="text-xl">Stake Tokens</div>
+            <div className="text-gray-300">
+              Balance: {currentDaiBalance} Dai
+            </div>
+          </div>
+          <div className="felx-row w-full flex justify-between items-end px-20 py-3">
+            <input
+              placeholder="Your first name"
+              className="flex items-center justify-start border-solid border-2 border-black w-full h-10 pl-3"
+            />
+            <div className="flex-row flex justify-between items-end">
+              <img src={'dai.png'} alt="Logo" className="px-5 h-9 w-18" />
+              <div>DAI</div>
+            </div>
+          </div>
+          <div className="w-full h-14 bg-blue-500 text-white m-3 flex justify-center items-center">
+            Stake!
+          </div>
+          <div className="text-blue-400">UN-STAKE..</div>
+        </div>
+        <div className="flex-1"></div>
+      </div>
     </div>
   );
 }
