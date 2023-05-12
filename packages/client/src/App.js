@@ -110,7 +110,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <div className="text-red-500">make</div>
+        <p className="text-3xl">
           Edit <code>src/App.js</code> and save to reload.
         </p>
         {!currentAccount && (
