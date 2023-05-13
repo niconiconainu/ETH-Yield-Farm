@@ -12,6 +12,8 @@ function App() {
   const [currentAccount, setCurrentAccount] = useState('');
   const [currentDaiBalance, setDaiBalance] = useState('0');
   const [currentDappBalance, setDappBalance] = useState('0');
+  const [stakedToken, setStakedToken] = useState('0');
+  const [transferAddress, setTransferAddress] = useState('');
 
   // コントラクトアドレスを記載
   const daiTokenAddress = '0x52345Ed1d933FA0f4aA592bA33c64D061317Bc95';
@@ -26,8 +28,17 @@ function App() {
   const dappTokenABI = dappAbi.abi;
   const tokenfarmABI = tokenfarmAbi.abi;
 
-  function convertEth(n) {
+  // コントラクトのインスタンスを格納する変数
+  let daiContract;
+  let dappContract;
+  let tokenfarmContract;
+
+  function convertToEth(n) {
     return n / 10 ** 18;
+  }
+
+  function convertToWei(n) {
+    return n * 10 ** 18;
   }
 
   const getBalance = async () => {
@@ -38,36 +49,57 @@ function App() {
         const signer = provider.getSigner();
         console.log(signer);
 
-        const daiContract = new ethers.Contract(
-          daiTokenAddress,
-          daiTokenABI,
-          signer,
-        );
-        const dappContract = new ethers.Contract(
+        daiContract = new ethers.Contract(daiTokenAddress, daiTokenABI, signer);
+        dappContract = new ethers.Contract(
           dappTokenAddress,
           dappTokenABI,
           signer,
         );
-        const tokenfarmContract = new ethers.Contract(
+        tokenfarmContract = new ethers.Contract(
           tokenfarmAddress,
           tokenfarmABI,
           signer,
         );
-        setDaiBalance(convertEth(await daiContract.balanceOf(currentAccount)));
-        setDappBalance(
-          convertEth(await dappContract.balanceOf(currentAccount)),
-        );
+        let daiBalance = await daiContract.balanceOf(currentAccount);
+        let dappBalance = await dappContract.balanceOf(currentAccount);
+        setDaiBalance(convertToEth(daiBalance));
+        setDappBalance(convertToEth(dappBalance));
       }
     } catch (error) {
       console.log(error);
     }
   };
 
-  const stake = async (event) => {
+  const handleStakeChange = (event) => {
+    setStakedToken(event.target.value);
+    console.log('staked token is:', event.target.value);
+  };
+
+  const stake = async () => {
     try {
       if (currentAccount !== '') {
-        // setStakedToken(event.target.value)
-        console.log('value is:', event.target.value);
+        await tokenfarmContract.stakeTokens(convertToEth(stakedToken));
+        console.log('value is:', stakedToken);
+      }
+      console.log('Connect Wallet');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleTransferChange = (event) => {
+    setTransferAddress(event.target.value);
+    console.log('staked token is:', event.target.value);
+  };
+
+  const transfer = async (event) => {
+    try {
+      if (currentAccount !== '') {
+        await daiContract.transfer(
+          transferAddress,
+          convertToWei(100).toString(),
+        );
+        console.log('Successed to transfer DAI token to:', transferAddress);
       }
       console.log('Connect Wallet');
     } catch (error) {
@@ -153,7 +185,7 @@ function App() {
           <div className="flex-row flex justify-between items-end w-full px-20">
             <div className="text-xl">Stake Tokens</div>
             <div className="text-gray-300">
-              Balance: {currentDaiBalance} Dai
+              Balance: {currentDaiBalance} DAI
             </div>
           </div>
           <div className="felx-row w-full flex justify-between items-end px-20 py-3">
@@ -161,31 +193,42 @@ function App() {
               placeholder="0"
               className="flex items-center justify-start border-solid border-2 border-black w-full h-10 pl-3"
               type="text"
-              id="message"
-              name="message"
-              onChange={stake}
+              id="stake"
+              name="stake"
+              value={stakedToken}
+              onChange={handleStakeChange}
             />
             <div className="flex-row flex justify-between items-end">
               <img src={'dai.png'} alt="Logo" className="px-5 h-9 w-18" />
               <div>DAI</div>
             </div>
           </div>
-          <div className="w-full h-14 bg-blue-500 text-white m-3 flex justify-center items-center">
+          <div
+            className="w-full h-14 bg-blue-500 text-white m-3 flex justify-center items-center"
+            onClick={stake}
+          >
             Stake!
           </div>
           <div className="text-blue-400">UN-STAKE..</div>
           {currentAccount.toUpperCase() === walletAddress.toUpperCase() ? (
             <>
-              <div className="text-xl pt-20">Transfer Token</div>
+              <div className="text-xl pt-20">Transfer 100 DAI</div>
               <div className="felx-row w-full flex justify-between items-end px-20 py-3">
                 <input
                   placeholder="0x..."
                   className="flex items-center justify-start border-solid border-2 border-black w-full h-10 pl-3"
                   type="text"
-                  id="message"
-                  name="message"
-                  onChange={stake}
+                  id="transfer"
+                  name="transfer"
+                  value={transferAddress}
+                  onChange={handleTransferChange}
                 />
+              </div>
+              <div
+                className="w-full h-14 bg-blue-500 text-white m-3 flex justify-center items-center"
+                onClick={transfer}
+              >
+                Transfer!
               </div>
             </>
           ) : (
