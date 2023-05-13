@@ -42,15 +42,9 @@ jobs:
     timeout-minutes: 2
     steps:
       - uses: actions/checkout@v3
-      - name: Install truffle
-        run: yarn global add truffle
       - uses: actions/cache@v3
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-      - name: Run truffle node
-        run: truffle develop &
       - name: Test
-        run: truffle test
-      - name: Kill node
-        run: kill $(lsof -t -i:9545)
+        run: yarn test
