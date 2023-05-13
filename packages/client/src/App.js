@@ -6,7 +6,6 @@ import daiAbi from './abis/DaiToken.json';
 import dappAbi from './abis/DappToken.json';
 import tokenfarmAbi from './abis/TokenFarm.json';
 import './App.css';
-import logo from './logo.svg';
 
 function App() {
   /* ユーザーのパブリックウォレットを保存するために使用する状態変数を定義 */
@@ -18,6 +17,9 @@ function App() {
   const daiTokenAddress = '0x52345Ed1d933FA0f4aA592bA33c64D061317Bc95';
   const dappTokenAddress = '0x6FCdEC94F86A32a6f0De4E64381631879e3f2037';
   const tokenfarmAddress = '0x1279FFF27C02529E8bA40C87093AEB2bfe4B0f1d';
+
+  //ウォレットアドレス(コントラクトの保持者)を記載
+  const walletAddress = '0x04CD057E4bAD766361348F26E847B546cBBc7946';
 
   /* ABIの内容を参照する変数を作成 */
   const daiTokenABI = daiAbi.abi;
@@ -43,12 +45,12 @@ function App() {
         );
         const dappContract = new ethers.Contract(
           dappTokenAddress,
-          daiTokenABI,
+          dappTokenABI,
           signer,
         );
         const tokenfarmContract = new ethers.Contract(
-          daiTokenAddress,
-          daiTokenABI,
+          tokenfarmAddress,
+          tokenfarmABI,
           signer,
         );
         setDaiBalance(convertEth(await daiContract.balanceOf(currentAccount)));
@@ -56,6 +58,18 @@ function App() {
           convertEth(await dappContract.balanceOf(currentAccount)),
         );
       }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const stake = async (event) => {
+    try {
+      if (currentAccount !== '') {
+        // setStakedToken(event.target.value)
+        console.log('value is:', event.target.value);
+      }
+      console.log('Connect Wallet');
     } catch (error) {
       console.log(error);
     }
@@ -135,7 +149,7 @@ function App() {
             <div>{currentDappBalance} DAPP</div>
           </div>
         </div>
-        <div className="h-1/3 w-1/2 flex justify-start items-center flex-col">
+        <div className="h-1/2 w-1/2 flex justify-start items-center flex-col">
           <div className="flex-row flex justify-between items-end w-full px-20">
             <div className="text-xl">Stake Tokens</div>
             <div className="text-gray-300">
@@ -144,8 +158,12 @@ function App() {
           </div>
           <div className="felx-row w-full flex justify-between items-end px-20 py-3">
             <input
-              placeholder="Your first name"
+              placeholder="0"
               className="flex items-center justify-start border-solid border-2 border-black w-full h-10 pl-3"
+              type="text"
+              id="message"
+              name="message"
+              onChange={stake}
             />
             <div className="flex-row flex justify-between items-end">
               <img src={'dai.png'} alt="Logo" className="px-5 h-9 w-18" />
@@ -156,6 +174,23 @@ function App() {
             Stake!
           </div>
           <div className="text-blue-400">UN-STAKE..</div>
+          {currentAccount.toUpperCase() === walletAddress.toUpperCase() ? (
+            <>
+              <div className="text-xl pt-20">Transfer Token</div>
+              <div className="felx-row w-full flex justify-between items-end px-20 py-3">
+                <input
+                  placeholder="0x..."
+                  className="flex items-center justify-start border-solid border-2 border-black w-full h-10 pl-3"
+                  type="text"
+                  id="message"
+                  name="message"
+                  onChange={stake}
+                />
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
         <div className="flex-1"></div>
       </div>
