@@ -60,7 +60,7 @@ contract TokenFarm {
     uint balance = stakingBalance[msg.sender];
     // 投資家がステーキングした金額が0以上であることを確認する
     require(
-      balance > _amount,
+      balance >= _amount,
       'staking balance should be more than unstaked amount'
     );
     // 偽の Dai トークンを投資家に返金する
