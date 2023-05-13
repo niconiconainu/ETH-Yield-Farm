@@ -1,4 +1,5 @@
 const hre = require('hardhat');
+const web3 = require('web3');
 
 async function main() {
   // コントラクトをdeployしているアドレスの取得
@@ -19,6 +20,12 @@ async function main() {
   const tokenFarm = await tokenfarmContractFactory.deploy(
     dappToken.address,
     daiToken.address,
+  );
+
+  // 全てのDappトークンをファームに移動する(1 million)
+  await dappToken.transfer(
+    tokenFarm.address,
+    web3.utils.toWei('1000000', 'ether'),
   );
 
   console.log('Deploying contracts with account: ', deployer.address);

@@ -9,6 +9,7 @@ module.exports = {
     sepolia: {
       url: STAGING_ALCHEMY_KEY || '',
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : ['0'.repeat(64)],
+      allowUnlimitedContractSize: true,
     },
     // mainnet: {
     //   chainId: 1,

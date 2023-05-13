@@ -10,15 +10,19 @@ import './App.css';
 function App() {
   /* ユーザーのパブリックウォレットを保存するために使用する状態変数を定義 */
   const [currentAccount, setCurrentAccount] = useState('');
+
+  // 各トークンの残高を保存するために使用する状態変数を定義
   const [currentDaiBalance, setDaiBalance] = useState('0');
   const [currentDappBalance, setDappBalance] = useState('0');
+
+  // フォームの入力値を保存するために使用する状態変数を定義
   const [stakedToken, setStakedToken] = useState('0');
   const [transferAddress, setTransferAddress] = useState('');
 
   // コントラクトアドレスを記載
-  const daiTokenAddress = '0x52345Ed1d933FA0f4aA592bA33c64D061317Bc95';
-  const dappTokenAddress = '0x6FCdEC94F86A32a6f0De4E64381631879e3f2037';
-  const tokenfarmAddress = '0x1279FFF27C02529E8bA40C87093AEB2bfe4B0f1d';
+  const daiTokenAddress = '0x30F80dd46e82Ec3A3cd0fe5aF29b378525F7e693';
+  const dappTokenAddress = '0xe9eF0ccF59a3A5E255d6270A8BAF8e9bC5502756';
+  const tokenfarmAddress = '0xb17c21AFD8775357b4a65b234081bddd87F825f7';
 
   //ウォレットアドレス(コントラクトの保持者)を記載
   const walletAddress = '0x04CD057E4bAD766361348F26E847B546cBBc7946';
@@ -33,18 +37,22 @@ function App() {
   let dappContract;
   let tokenfarmContract;
 
+  // ETHに変換する関数
   function convertToEth(n) {
     return n / 10 ** 18;
   }
 
+  // WEIに変換する関数
   function convertToWei(n) {
     return n * 10 ** 18;
   }
 
+  // 各トークンの残高を取得する関数
   const getBalance = async () => {
     const { ethereum } = window;
     try {
       if (ethereum) {
+        // コントラクトのインスタンスを作成
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         console.log(signer);
@@ -60,6 +68,8 @@ function App() {
           tokenfarmABI,
           signer,
         );
+
+        // 各トークンの残高を格納
         let daiBalance = await daiContract.balanceOf(currentAccount);
         let dappBalance = await dappContract.balanceOf(currentAccount);
         setDaiBalance(convertToEth(daiBalance));
@@ -70,15 +80,23 @@ function App() {
     }
   };
 
+  // stakeする値を格納する関数
   const handleStakeChange = (event) => {
     setStakedToken(event.target.value);
     console.log('staked token is:', event.target.value);
   };
 
+  // stake関数
   const stake = async () => {
     try {
       if (currentAccount !== '') {
-        await tokenfarmContract.stakeTokens(convertToEth(stakedToken));
+        await daiContract.approve(
+          tokenfarmContract.address,
+          convertToWei(stakedToken).toString(),
+        );
+        await tokenfarmContract.stakeTokens(
+          convertToWei(stakedToken).toString(),
+        );
         console.log('value is:', stakedToken);
       }
       console.log('Connect Wallet');
@@ -87,11 +105,26 @@ function App() {
     }
   };
 
+  // unstake関数
+  const unStake = async () => {
+    try {
+      if (currentAccount !== '') {
+        await tokenfarmContract.unstakeTokens(
+          convertToWei(stakedToken).toString(),
+        );
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // transferする先のアドレスを格納する関数
   const handleTransferChange = (event) => {
     setTransferAddress(event.target.value);
     console.log('staked token is:', event.target.value);
   };
 
+  // transfer関数
   const transfer = async (event) => {
     try {
       if (currentAccount !== '') {
@@ -107,6 +140,7 @@ function App() {
     }
   };
 
+  // ウォレット接続を確認する関数
   const checkIfWalletIsConnected = async () => {
     try {
       const { ethereum } = window;
@@ -130,7 +164,8 @@ function App() {
       console.log(error);
     }
   };
-  /* connectWalletメソッドを実装 */
+
+  // ウォレットに接続する関数
   const connectWallet = async () => {
     try {
       const { ethereum } = window;
@@ -148,6 +183,7 @@ function App() {
     }
   };
 
+  // リロードごとにウォレット接続を確認する
   useEffect(() => {
     checkIfWalletIsConnected();
   });
@@ -209,7 +245,9 @@ function App() {
           >
             Stake!
           </div>
-          <div className="text-blue-400">UN-STAKE..</div>
+          <div className="text-blue-400" onClick={unStake}>
+            UN-STAKE..
+          </div>
           {currentAccount.toUpperCase() === walletAddress.toUpperCase() ? (
             <>
               <div className="text-xl pt-20">Transfer 100 DAI</div>
