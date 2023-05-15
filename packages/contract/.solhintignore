@@ -1,0 +1,4 @@
+node_modules
+package.json
+solhint.json
+.ginignore

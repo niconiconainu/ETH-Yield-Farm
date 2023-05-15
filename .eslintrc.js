@@ -5,9 +5,7 @@ module.exports = {
     mocha: true,
     node: true,
   },
-  plugins: ['@typescript-eslint'],
   extends: ['standard', 'prettier', 'plugin:node/recommended'],
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -20,7 +18,7 @@ module.exports = {
     'node/no-unsupported-features/node-builtins': ['warn'],
     'node/no-unpublished-require': [
       'warn',
-      { allowModules: ['tailwind-scrollbar'] },
+      { allowModules: ['tailwind-scrollbar', 'dotenv'] },
     ],
     'node/no-unpublished-import': ['warn'],
     'node/no-missing-import': ['warn'],
