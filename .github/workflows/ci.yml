@@ -41,7 +41,9 @@ jobs:
     needs: [setup, check]
     steps:
       - uses: actions/checkout@v3
-      - name: install hardhat
-        run: yarn add hardhat
+      - uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: integration_test
-        run: yarn workspace contract test
+        run: yarn test
