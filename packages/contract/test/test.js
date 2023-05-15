@@ -52,7 +52,7 @@ describe('TokenFarm', () => {
     });
   });
   // テスト2
-  describe('Dapp Token deployment', async () => {
+  describe('Dapp Token deployment', () => {
     it('has a name', async () => {
       const { dappToken } = await loadFixture(deployTokenFixture);
       const name = await dappToken.name();
@@ -60,7 +60,7 @@ describe('TokenFarm', () => {
     });
   });
 
-  describe('Token Farm deployment', async () => {
+  describe('Token Farm deployment', () => {
     // テスト3
     it('has a name', async () => {
       const { tokenFarm } = await loadFixture(deployTokenFixture);
@@ -75,7 +75,7 @@ describe('TokenFarm', () => {
     });
   });
 
-  describe('Farming tokens', async () => {
+  describe('Farming tokens', () => {
     it('rewards investors for staking mDai tokens', async () => {
       const { daiToken, dappToken, tokenFarm, investor, owner } =
         await loadFixture(deployTokenFixture);

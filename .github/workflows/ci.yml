@@ -46,5 +46,4 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: integration_test
-        run: yarn test
-        working-directory: packages/contract
+        run: yarn workspace contract test
