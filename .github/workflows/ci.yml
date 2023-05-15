@@ -41,5 +41,7 @@ jobs:
     needs: [setup, check]
     steps:
       - uses: actions/checkout@v3
+      - name: install hardhat
+        run: yarn add hardhat
       - name: integration_test
         run: yarn workspace contract test
